@@ -2149,6 +2149,19 @@ class MaskRCNN():
                                 cache_subdir='models',
                                 md5_hash='a268eb855778b3df3c7506639542a6af')
         return weights_path
+    def get_imagenet_R101_weights(self):
+        """Downloads ImageNet trained weights from Keras.
+        Returns path to weights file.
+        """
+        from keras.utils.data_utils import get_file
+        TF_WEIGHTS_PATH_NO_TOP = 'https://github.com/keras-team/keras-applications/'\
+                                 'releases/download/resnet/'\
+                                 'resnet101_weights_tf_dim_ordering_tf_kernels_notop.h5'
+        weights_path = get_file('resnet101_weights_tf_dim_ordering_tf_kernels_notop.h5',
+                                TF_WEIGHTS_PATH_NO_TOP,
+                                cache_subdir='models',
+                                md5_hash='88cf7a10940856eca736dc7b7e228a21')
+        return weights_path
 
     def compile(self, learning_rate, momentum):
         """Gets the model ready for training. Adds losses, regularization, and
