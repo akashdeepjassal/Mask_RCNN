@@ -466,7 +466,7 @@ if __name__ == '__main__':
     elif args.model.lower() == "imagenet":
         # Start from ImageNet trained weights
         model_path = model.get_imagenet_weights()
-    elif args.model.lower() == "imagenet_R101":
+    elif args.model.lower() == "imagenet_r101":
         # Start from ImageNet trained weights
         model_path = model.get_imagenet_R101_weights()
     else:
